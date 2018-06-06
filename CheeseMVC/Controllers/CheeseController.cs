@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CheeseMVC.Models.Cheese;
+using CheeseMVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CheeseMVC.Controllers
@@ -34,14 +35,14 @@ namespace CheeseMVC.Controllers
         [HttpGet]
         public IActionResult CheckBoxDelete()
         {
-            List<Cheese> model = CheeseData.GetAll();
+            DeleteCheesesViewModel model = new DeleteCheesesViewModel();
             return View(model);
         }
 
         [HttpPost]
-        public IActionResult CheckBoxDelete(int[] cheeseIdsToDelete)
+        public IActionResult CheckBoxDelete(DeleteCheesesViewModel model)
         {
-            cheeseIdsToDelete.ToList().ForEach(id => CheeseData.Remove(id));
+            model.Delete();
             return Redirect("Index");
         }
 

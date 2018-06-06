@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheeseMVC", "CheeseMVC\Chee
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantMenu", "RestaurantMenu\RestaurantMenu.csproj", "{DD29E050-6D08-42EC-A152-79BC777D0EF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizApp", "QuizApp\QuizApp.csproj", "{FD3E6788-5197-4DEC-8010-C0551C6AF55D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizApp", "QuizApp\QuizApp.csproj", "{FD3E6788-5197-4DEC-8010-C0551C6AF55D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumExample", "EnumExample\EnumExample.csproj", "{5C015137-276A-47BB-8EEE-89B17C634436}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{FD3E6788-5197-4DEC-8010-C0551C6AF55D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD3E6788-5197-4DEC-8010-C0551C6AF55D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD3E6788-5197-4DEC-8010-C0551C6AF55D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C015137-276A-47BB-8EEE-89B17C634436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C015137-276A-47BB-8EEE-89B17C634436}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C015137-276A-47BB-8EEE-89B17C634436}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C015137-276A-47BB-8EEE-89B17C634436}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

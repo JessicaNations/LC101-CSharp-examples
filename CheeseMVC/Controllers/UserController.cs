@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CheeseMVC.Models.User;
+using CheeseMVC.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,14 +15,13 @@ namespace CheeseMVC.Controllers
         public ActionResult Index(string message)
         {
             ViewBag.message = message;
-            List<User> model = UserData.GetAll();
             return View();
         }
 
         // GET: User/Details/5
         public ActionResult Details(int id)
         {
-            UserData.GetById(id);
+            //UserData.GetById(id);
             return View();
         }
 
@@ -34,17 +34,13 @@ namespace CheeseMVC.Controllers
         // POST: User/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Add(User user, string verify)
+        public ActionResult Add(AddUserViewModel model)
         {
-            if (user.Password != verify)
-            {
-                ViewBag.message = "Passwords do not match";
-                user.Password = string.Empty;
-                return View(user);
-            }
+            if (!ModelState.IsValid)
+                return View(model);
 
-            UserData.Add(user);
-            string messageString = $"Welcome {user.UserName}!";
+            model.Add();
+            string messageString = $"Welcome {model.UserName}!";
             //return Redirect($"Index?message={messageString}");
             return RedirectToAction("Index", new { message = messageString });
         }
